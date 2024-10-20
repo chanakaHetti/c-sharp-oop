@@ -1,10 +1,18 @@
 ﻿Console.WriteLine("Hello, World!");
 
-// String Trim()
+// String methods
 
 string firstName = "       Chanaka     ";
 firstName = firstName.Trim();
 
 string lastName = "         HA      ";
 
-Console.WriteLine($"My name is: {firstName} {lastName.Trim()}");
+string fullName = $"My name is: {firstName} {lastName.Trim()}";
+
+Console.WriteLine(fullName);
+Console.WriteLine(fullName.Replace("HA", "Dileep"));
+Console.WriteLine(fullName);
+
+Console.WriteLine("Assign the value----------------");
+fullName = fullName.Replace("HA", "Dileep");
+Console.WriteLine(fullName);
