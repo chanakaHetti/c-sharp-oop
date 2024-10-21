@@ -16,3 +16,10 @@ Console.WriteLine(fullName);
 Console.WriteLine("Assign the value----------------");
 fullName = fullName.Replace("HA", "Dileep");
 Console.WriteLine(fullName);
+
+Console.WriteLine(fullName.Contains("Chanaka"));
+Console.WriteLine(fullName.Contains("chanaka"));
+
+Console.WriteLine(fullName.ToUpper());
+
+Console.WriteLine(fullName.Length);
