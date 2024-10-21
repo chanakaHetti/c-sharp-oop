@@ -48,4 +48,18 @@ Console.WriteLine(g);
 
 // long h = checked(d + e);
 
-// Console.WriteLine(h);
+// Console.WriteLine(h); // This shows some Unhandled exception.
+
+double aa = 4.254;
+double bb = 10.89;
+
+double cc = aa + bb;
+
+Console.WriteLine(cc);
+
+// double is natural type
+// float ee = 12.458F
+
+float ee = 12.45F;
+
+Console.WriteLine(ee);
