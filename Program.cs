@@ -63,3 +63,19 @@ Console.WriteLine(cc);
 float ee = 12.45F;
 
 Console.WriteLine(ee);
+
+// If statements
+
+int aaa = 5;
+int bbb = 6;
+int ccc = aaa + bbb;
+
+if (ccc < 10) {
+    Console.WriteLine("If state");
+} else if (ccc == 10) {
+    Console.WriteLine("If else state");
+} else {
+    Console.WriteLine("Else state");
+}
+
+Console.WriteLine("outside If state");
