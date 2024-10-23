@@ -132,3 +132,26 @@ for (int i = 0; i < names.Count; i++) {
     Console.WriteLine($"Hello {names[i].ToUpper()}!");
 }
 
+Console.WriteLine(names[0]);
+Console.WriteLine(names[2]);
+
+Console.WriteLine(names[names.Count - 1]);
+Console.WriteLine(names[^1]);
+
+foreach (var name in names[2..4]) {
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+};
+
+Console.WriteLine("String Array-------------");
+
+var namesArray = new string[] { "<name>", "Chanaka", "Dileep" };
+
+// Array is fixed so can't run .Add 
+// To add
+namesArray = [.. namesArray, "Buddhika"];
+
+Console.WriteLine(namesArray);
+
+foreach (var name in namesArray) {
+    Console.WriteLine($"Hello {name}");
+}
