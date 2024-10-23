@@ -105,3 +105,11 @@ do {
     counterThree++;
 }
 while (counterThree <= 5);
+
+// For loop
+
+Console.WriteLine("For loop ------------");
+
+for (int i = 0; i <= 5; i++) {
+    Console.WriteLine(i);
+}
