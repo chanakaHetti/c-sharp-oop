@@ -79,3 +79,29 @@ if (ccc < 10) {
 }
 
 Console.WriteLine("outside If state");
+
+// While loops
+int counterOne = 0;
+int counterTwo = 0;
+
+while (counterOne <= 5) {
+    counterOne++;
+    Console.WriteLine(counterOne);
+}
+
+Console.WriteLine("Break-----------");
+
+while (counterTwo <= 5) {
+    Console.WriteLine(counterTwo);
+    counterTwo++;
+}
+
+Console.WriteLine("Do while loop -----------");
+
+// Do while loop
+int counterThree = 0;
+do {
+    Console.WriteLine(counterThree);
+    counterThree++;
+}
+while (counterThree <= 5);
