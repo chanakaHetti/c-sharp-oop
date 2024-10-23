@@ -155,3 +155,24 @@ Console.WriteLine(namesArray);
 foreach (var name in namesArray) {
     Console.WriteLine($"Hello {name}");
 }
+
+Console.WriteLine("List Sort----------------------");
+
+var listNames = new List<string> { "Chanaka", "Dileep", "Buddhika" };
+
+listNames.Sort();
+
+foreach (var name in listNames) {
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+var listNumber = new List<int> { 12, 18, 47, 86, 103, 18, 29, 98, 65, 54 };
+
+Console.WriteLine($"Number 29's index is {listNumber.IndexOf(29)}");
+listNumber.Sort();
+Console.WriteLine($"Number 29's index is {listNumber.IndexOf(29)}");
+
+foreach (var number in listNumber) {
+    Console.WriteLine($"{number}");
+}
+
