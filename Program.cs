@@ -113,3 +113,22 @@ Console.WriteLine("For loop ------------");
 for (int i = 0; i <= 5; i++) {
     Console.WriteLine(i);
 }
+
+// List and collections
+Console.WriteLine("List ------------");
+
+var names = new List<string> { "<name>", "Chanaka", "Dileep" };
+
+names.Add("Buddhika");
+names.Add("HA");
+
+Console.WriteLine(names);
+
+foreach (var name in names) {
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+};
+
+for (int i = 0; i < names.Count; i++) {
+    Console.WriteLine($"Hello {names[i].ToUpper()}!");
+}
+
