@@ -176,3 +176,36 @@ foreach (var number in listNumber) {
     Console.WriteLine($"{number}");
 }
 
+Console.WriteLine("LINQ-------------");
+
+// LINQ - Language Integrated Query
+List<int> scores = [97, 92, 81, 60];
+
+Console.WriteLine("Using For loop-----------");
+
+for (int i = 0; i < scores.Count; i++) {
+    if (scores[i] > 80) {
+        Console.WriteLine($"Found a score over 80, {scores[i]}");
+    }
+}
+
+Console.WriteLine("Using Foreach-----------");
+
+foreach (int score in scores) {
+    if (score > 80) {
+        Console.WriteLine($"Found a score over 80, {score}");
+    }
+}
+
+Console.WriteLine("Using LINQ-----------");
+
+// Define the query expression
+IEnumerable<int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// EExecute the query
+foreach (int item in scoreQuery) {
+    Console.WriteLine($"Found a score over 80, {item}");
+}
