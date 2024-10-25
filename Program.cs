@@ -1,4 +1,7 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using System;
+using PersonNamespace;
+
+Console.WriteLine("Hello, World!");
 
 // String and String methods
 Console.WriteLine("----------- String and String methods -----------");
@@ -233,4 +236,37 @@ var scoreQueryWithLambda = scores
 
 foreach (int item in scoreQueryWithLambda) {
     Console.WriteLine($"{item}");
+}
+
+// OOP
+Console.WriteLine("OOP-----------");
+
+namespace MyNamespace {
+    public class MyApp {
+        public static void Main() {
+            Console.WriteLine("Hello");
+
+            var p1 = new PersonNamespace.Person("Chanaka", "HA", new DateOnly(1993, 12, 17));
+            var p2 = new PersonNamespace.Person("Amila", "Ramanayaka", new DateOnly(1993, 04, 25));
+
+            List<Person> people = [p1, p2];
+
+            Console.WriteLine("OOP Person class-----------");
+            // Console.WriteLine($"Person 1: {p1.firstName} {p1.lastName}, Birthday: {p1.birthday}");
+            // Console.WriteLine($"Person 2: {p2.firstName} {p2.lastName}, birthday: {p2.Birthday}");
+        }
+    }
+}
+
+
+// Person class
+
+// Console.WriteLine("OOP Person class-----------");
+
+namespace PersonNamespace {
+    class Person(string firstName, string lastName, DateOnly birthday) {
+        public string First { get; } = firstName;
+        public string Last { get; } = lastName;
+        public DateOnly Birthday { get; } = birthday;
+    }
 }
