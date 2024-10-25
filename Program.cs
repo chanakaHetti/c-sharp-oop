@@ -1,5 +1,4 @@
 ﻿using System;
-using PersonNamespace;
 
 Console.WriteLine("Hello, World!");
 
@@ -241,32 +240,80 @@ foreach (int item in scoreQueryWithLambda) {
 // OOP
 Console.WriteLine("OOP-----------");
 
-namespace MyNamespace {
-    public class MyApp {
-        public static void Main() {
-            Console.WriteLine("Hello");
+// namespace MyNamespace {
+//     public class MyApp {
+//         public static void Main() {
+//             Console.WriteLine("Hello");
 
-            var p1 = new PersonNamespace.Person("Chanaka", "HA", new DateOnly(1993, 12, 17));
-            var p2 = new PersonNamespace.Person("Amila", "Ramanayaka", new DateOnly(1993, 04, 25));
+//             var p1 = new PersonNamespace.Person("Chanaka", "HA", new DateOnly(1993, 12, 17));
+//             var p2 = new PersonNamespace.Person("Amila", "Ramanayaka", new DateOnly(1993, 04, 25));
 
-            List<Person> people = [p1, p2];
+//             List<Person> people = [p1, p2];
 
-            Console.WriteLine("OOP Person class-----------");
-            // Console.WriteLine($"Person 1: {p1.firstName} {p1.lastName}, Birthday: {p1.birthday}");
-            // Console.WriteLine($"Person 2: {p2.firstName} {p2.lastName}, birthday: {p2.Birthday}");
-        }
-    }
-}
+//             Console.WriteLine("OOP Person class-----------");
+//             // Console.WriteLine($"Person 1: {p1.firstName} {p1.lastName}, Birthday: {p1.birthday}");
+//             // Console.WriteLine($"Person 2: {p2.firstName} {p2.lastName}, birthday: {p2.Birthday}");
+//         }
+//     }
+// }
 
 
 // Person class
 
 // Console.WriteLine("OOP Person class-----------");
 
-namespace PersonNamespace {
-    class Person(string firstName, string lastName, DateOnly birthday) {
-        public string First { get; } = firstName;
-        public string Last { get; } = lastName;
-        public DateOnly Birthday { get; } = birthday;
+var p1 = new Person("Chanaka", "HA", new DateOnly(1993, 12, 17));
+var p2 = new Person("Amila", "Ramanayaka", new DateOnly(1993, 04, 25));
+
+List<Person> people = [p1, p2];
+
+Console.WriteLine("OOP Person class-----------");
+Console.WriteLine(people.Count());
+
+p1.Pets.Add(new Dog("Pincy"));
+p1.Pets.Add(new Dog("Tommy"));
+
+p2.Pets.Add(new Cat("Kitty"));
+p2.Pets.Add(new Cat("Blacky"));
+
+foreach (var person in people) {
+    Console.WriteLine($"{person} -------- hi");
+
+    foreach (var pet in person.Pets) {
+        Console.WriteLine($"   {pet}");
     }
+}
+
+// namespace PersonNamespace {
+public class Person(string firstName, string lastName, DateOnly birthday) {
+    public string First { get; } = firstName;
+    public string Last { get; } = lastName;
+    public DateOnly Birthday { get; } = birthday;
+
+    public List<Pet> Pets { get; } = new();
+
+    public override string ToString() {
+        return $"Human {First} {Last} and I was born in {Birthday}";
+    }
+}
+// }
+
+public abstract class Pet(string firstName) {
+    public string First { get; } = firstName;
+
+    public abstract string MakeNoice();
+
+    public override string ToString() {
+        return $"{First} I am a {GetType().Name} and I {MakeNoice()}";
+    }
+}
+
+public class Cat(string firstName) : Pet(firstName) {
+
+    public override string MakeNoice() => "Meow";
+}
+
+public class Dog(string firstName) : Pet(firstName) {
+
+    public override string MakeNoice() => "Bark";
 }
