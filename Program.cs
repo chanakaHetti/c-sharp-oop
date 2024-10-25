@@ -179,7 +179,7 @@ foreach (var number in listNumber) {
 Console.WriteLine("LINQ-------------");
 
 // LINQ - Language Integrated Query
-List<int> scores = [97, 92, 81, 60];
+List<int> scores = [89, 97, 81, 92, 81, 100, 60];
 
 Console.WriteLine("Using For loop-----------");
 
@@ -203,9 +203,24 @@ Console.WriteLine("Using LINQ-----------");
 IEnumerable<int> scoreQuery =
     from score in scores
     where score > 80
+    orderby score descending
     select score;
 
-// EExecute the query
+// Execute the query
 foreach (int item in scoreQuery) {
     Console.WriteLine($"Found a score over 80, {item}");
+}
+
+Console.WriteLine("Using LINQ for string-----------");
+
+IEnumerable<string> scoreStringQuery =
+    from score in scores
+    where score > 80
+    orderby score descending
+    select $"The score is {score}";
+
+Console.WriteLine(scoreStringQuery.Count());
+
+foreach (string item in scoreStringQuery) {
+    Console.WriteLine($"{item}");
 }
