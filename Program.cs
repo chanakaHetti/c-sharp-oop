@@ -224,3 +224,13 @@ Console.WriteLine(scoreStringQuery.Count());
 foreach (string item in scoreStringQuery) {
     Console.WriteLine($"{item}");
 }
+
+Console.WriteLine("Using LINQ with lambda-----------");
+
+var scoreQueryWithLambda = scores
+    .Where(s => s > 80)
+    .OrderByDescending(s => s);
+
+foreach (int item in scoreQueryWithLambda) {
+    Console.WriteLine($"{item}");
+}
